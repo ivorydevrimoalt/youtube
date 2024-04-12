@@ -8,16 +8,40 @@
     body {
       margin: 0;
       padding: 0;
+      display: flex; /* Make the body a flex container */
+      flex-direction: column; /* Arrange elements vertically */
     }
+
+    .container { /* Create a container for video and image */
+      display: flex;
+      flex-grow: 1; /* Grow the container to fill available space */
+    }
+
     video {
-      display: block;
-      margin: auto;
+      width: 100%; /* Make video fill container width */
+    }
+
+    img {
+      width: 200px; /* Adjust image width as needed */
+      margin-left: 10px; /* Add margin for spacing */
+    }
+
+    .video-bar {
+      position: absolute; /* Position bar on top of video */
+      bottom: 0; /* Align bar to the bottom */
+      width: 100%; /* Make bar span full video width */
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      color: white; /* Text color for controls */
+      padding: 5px; /* Add padding for spacing */
     }
   </style>
 </head>
 <body>
-  <img id="logo" src="2024_04_12_0ug_Kleki.png" alt="Logo">
-  <video id="mainVideo" src="Untitled345456464565346564564564456456456456.mp4" controls class="hidden"></video>
+  <div class="container">  
+    <video id="mainVideo" src="Untitled345456464565346564564564456456456456.mp4" controls></video>
+    <img id="logo" src="2024_04_12_0ug_Kleki.png" alt="Logo">
+  </div>
+
   <div class="video-bar">
     <button id="playPauseBtn">Play</button>
     <input type="range" value="0" min="0" max="100" id="seekBar">
