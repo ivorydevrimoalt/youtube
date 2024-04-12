@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="path/to/your/logo.png" alt="Logo">  <video id="mainVideo" src="path/to/your/video.mp4" controls class="hidden"></video>  <div class="video-bar">
+    <button id="playPauseBtn">Play</button>
+    <input type="range" value="0" min="0" max="100" id="seekBar">
+    <button id="fullscreenBtn">Fullscreen</button>
+  </div>
+
+  <div id="uninteractableVideo">
+    <video id="unplayableVideo" src="path/to/your/uninteractable/video.mp4" muted class="hidden"></video>  <div id="unplayableOverlay"></div>
+  </div>
+
+  <script>
+    const logo = document.getElementById("logo");
+    const mainVideo = document.getElementById("mainVideo");
+    const seekBar = document.getElementById("seekBar");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const unplayableVideo = document.getElementById("unplayableVideo");
+    const unplayableOverlay = document.getElementById("unplayableOverlay");
+
+    // Update button text and video state on play/pause
+    playPauseBtn.addEventListener("click", () => {
+      if (mainVideo.paused) {
+        mainVideo.play();
+        playPauseBtn.textContent = "Pause";
+      } else {
+        mainVideo.pause();
+        playPauseBtn.textContent = "Play";
+      }
+    });
+
+    // Update video progress bar on seeking
+    seekBar.addEventListener("change", () => {
+      const time = (seekBar.value / 100) * mainVideo.duration;
+      mainVideo.currentTime = time;
+    });
+
+    // Update progress bar on video progress
+    mainVideo.addEventListener("timeupdate", () => {
+      const value = (mainVideo.currentTime / mainVideo.duration) * 100;
+      seekBar.value = value;
+    });
+
+    // Toggle fullscreen mode on button click (implementation depends on browser)
+    fullscreenBtn.addEventListener("click", () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        mainVideo.requestFullscreen();
+      }
+    });
+
+    // Set unplayable video section styles (replace with background or color logic based on your design)
+    unplayableOverlay.style.backgroundColor = "lightgray"; // Example for unplayable section background
+  </script>
+</body>
+</html>
