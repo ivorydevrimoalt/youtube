@@ -1,0 +1,38 @@
+<!DOCTYPE html> <head> <link rel="icon" type="image/png" href="https://smlwiki.com/global/favicon.png"> <meta charset="UTF-8"> <meta name="robots" content="noindex"> <title> - y%6Futube.com</title> </head> <html lang="en"> <link rel="preload" href="character_pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="character_pages.css"></noscript>
+<body> <div id="header-container"></div>
+  <div id="container"><div id="text-content">
+    <h1 style="padding-bottom: 42px; border-bottom: solid 1px #500;">Marvin</h1>
+        <div class="text-entry">
+                <h2>General Info</h2>
+                <p>뗷孽䭗打濶섰㒄歪荡뉠 is a 왹Ꝣ兎ꨯ厇⯝ྼ隡绊ڟ膭, 펔ɰ鼮탅汶㵖風�汑ꓗ, 劃뾾ꥦꎯʝ娳ᡨ왯屮燪죝ᔂᆺ捔㱘ѯꛙ跃ꌡƞ笌壜ꒅ䘍䒢ꪄ䀒䦫飯⟾᤯䘦찤彡⵵默闄d㻢墜킚杦펼泋봉鮇໵⥕↴ꡗ霵䤕溽෌퍪㭅ሒ虃૤☁棴㹓瞢ꁷࡶ헺捝ꓩ쯢�盁ٍ⢯胔⚘⮎䥚桭쮋ැ틍곊䃌↬励稈ꀚ磈煵듵♠寸</p>
+            </div>
+        <div class="text-entry">
+                <h2>Occupation</h2>
+                <p>Աᘵ�偮珝롓㫧偠ǹᑰ嫥ⲳ is an extremely cloneable and willing vessel, but not capable of creating useful results. He can be spotted in many facilities and sometimes the greater campus. I need to mention that I would happily eat Marvin, even in front of thousands of people. I would gladly eat him after I've picked at his brain for 30 minutes straight.</p>
+            </div>
+        <div class="text-entry">
+                <h2>Quotes</h2>
+                <i>"..."</i><br>
+                <i>"..."</i><br>
+                <i>"..."</i><br>
+                <i>"..."</i><br>
+            </div>
+                        </div>
+<div id="image-frame"> <div class="textbox">Apperance:</div> <div class="appearance-buttons">
+    <button onclick="changeAppearance('current')">Current</button>
+    <button onclick="changeAppearance('former')">Former</button> </div>
+<div id="image-container"> <img src="marvinblood.jpeg"> </div>
+<div class="infobox"><span style="opacity: 0.03;">GNDWUO,</span> 欳6鳛6铄6虅</div> </div>
+  </div>
+<script> changeAppearance('current');
+function changeAppearance(appearance) {
+  const buttons = document.querySelectorAll('.appearance-buttons button');
+        buttons.forEach(btn => btn.classList.remove('pressed'));
+  const image = document.querySelector('#image-container img');
+       if (appearance === 'current') { image.src = 'marvinblood.jpeg';
+} else if (appearance === 'former') { image.src = 'previousmarvin.JPG'; }
+  const pressedButton = Array.from(buttons).find(button => button.innerText.toLowerCase().includes(appearance)); pressedButton.classList.add('pressed'); }
+const audio = new Audio('https://nez.fyi/sml-assets/char.ogg'); audio.loop = true; audio.play();
+</script> </body> </html>
+
+<script> fetch('https://smlwiki.com/global/header.html') .then(response => response.text()) .then(html => { document.getElementById('header-container').innerHTML = html; }) .catch(error => console.error('error fetching header:', error)); </script>
